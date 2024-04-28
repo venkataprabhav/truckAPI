@@ -17,6 +17,9 @@ This section contains information of what the API contains (endpoints and databa
 •	PATCH /EditTruck/{id}  - (Edits a Truck's information through its ID and updated information)
 
 
+![image](https://github.com/venkataprabhav/truckAPI/assets/123014399/2fd0768b-a8a4-4b10-8a85-2b82c26ddc7a)
+
+
 ### Below contains the columns and data types of Trucks in the table of the database: 
 
 Field Name   -   Data Type 
