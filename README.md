@@ -1,4 +1,4 @@
-# truckAPI (Upcoming Updates - Frontend)
+# truckAPI (Upcoming Updates - Frontend: Angular)
 Simple API for Trucks coded using ASP.NET Core (.NET 6)
 Use of MSSQL Database has been implemented into this API.
 Unit Tests for testing endpoints have been implemented using the 'xUnit' framework.
