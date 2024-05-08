@@ -1,0 +1,42 @@
+﻿@model Interview_Task_TruckAPI.Models.Truck
+
+@{
+    ViewData["Title"] = "Create Truck";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Index" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Registration">Registration</label>
+        <input asp-for="Registration" class="form-control" />
+        <span asp-validation-for="Registration" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="GrossWeight">Gross Weight</label>
+        <input asp-for="GrossWeight" class="form-control" />
+        <span asp-validation-for="GrossWeight" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TareWeight">Tare Weight</label>
+        <input asp-for="TareWeight" class="form-control" />
+        <span asp-validation-for="TareWeight" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NettWeight">Nett Weight</label>
+        <input asp-for="NettWeight" class="form-control" />
+        <span asp-validation-for="NettWeight" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Haulier">Haulier</label>
+        <input asp-for="Haulier" class="form-control" />
+        <span asp-validation-for="Haulier" class="text-danger"></span>
+    </div>
+
+    <!-- Add an anti-forgery token within the form -->
+    @Html.AntiForgeryToken()
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
