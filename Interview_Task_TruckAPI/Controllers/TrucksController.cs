@@ -21,11 +21,14 @@ namespace Interview_Task_TruckAPI.Controllers
 
         // HTTP GET request for /Trucks
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Truck>>> GetTrucks()
+        //public async Task<ActionResult<IEnumerable<Truck>>> GetTrucks()
+        public async Task<IActionResult> Index()
         {
             // Retrieves information of all trucks from the Trucks database
-            return await _context.Trucks.ToListAsync();
+            var trucks = await _context.Trucks.ToListAsync();
+            return View(trucks);
         }
+
         /*
         public IActionResult Index()
         {

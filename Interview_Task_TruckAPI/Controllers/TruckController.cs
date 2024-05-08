@@ -6,7 +6,42 @@ using Microsoft.EntityFrameworkCore;
 namespace Interview_Task_TruckAPI.Controllers
 {
     [ApiController]             // This attribute indicates that this Controller handles HTTP API requests
-    [Route("[controller]")]     // This attribute specifies the base route for this Controller based on the controller's name
+    [Route("[controller]")]
+    public class TruckController : Controller
+    {
+        private readonly ApplicationDbContext _context;
+
+        public TruckController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        // GET: Truck/Create
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();  // Returns the empty form view
+        }
+
+        // POST: Truck/Create
+        // To handle the form submission
+        [HttpPost]
+        [ValidateAntiForgeryToken]  // Helps prevent cross-site request forgery attacks
+        public async Task<IActionResult> Index([Bind("Registration,GrossWeight,TareWeight,NettWeight,Haulier")] Truck truck)
+        {
+            if (ModelState.IsValid)  // Checks if the model state is valid
+            {
+                _context.Add(truck);   // Adds the truck to the context
+                await _context.SaveChangesAsync();  // Saves changes to the database
+                return RedirectToAction(nameof(Index));  // Redirects to the Create action to display the form again, or you might redirect to another action like Index
+            }
+            return View(truck);  // Returns the view with the current truck data for corrections
+        }
+
+        // Other existing methods...
+    }
+
+    /*
     public class TruckController : Controller
     {
         // Declaration of Dependency, field to hold database context
@@ -27,6 +62,7 @@ namespace Interview_Task_TruckAPI.Controllers
 
         // HTTP POST request for /Truck
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult<Truck>> PostTruck([FromBody] Truck truck)
         {
             if (truck == null)
@@ -46,6 +82,6 @@ namespace Interview_Task_TruckAPI.Controllers
         {
             return View();
         }
-        */
-    }
+        
+    } */
 }
