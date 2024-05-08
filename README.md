@@ -1,4 +1,4 @@
-# truckAPI (Upcoming Updates - Frontend)
+# truckAPI (Updates: Frontend added for two endpoints)
 Simple API for Trucks coded using ASP.NET Core (.NET 6)
 Use of MSSQL Database has been implemented into this API.
 Unit Tests for testing endpoints have been implemented using the 'xUnit' framework.
@@ -10,7 +10,13 @@ This section contains information of what the API contains (endpoints and databa
 
 •	GET /Trucks  -  (Retrieves information of all trucks from the database)
 
+![image](https://github.com/venkataprabhav/truckAPI/assets/123014399/d35286ab-e77d-4a46-b0c8-36b4817e50f9)
+
+
 •	POST /Truck  -  (Adds a new truck to the database after providing necessary information)
+
+![image](https://github.com/venkataprabhav/truckAPI/assets/123014399/9e10d612-e818-466d-81f7-949fb816b4b7)
+
 
 •	DELETE /RemoveTruck/{id}  -  (Deletes a Truck from the database through its ID)
 
